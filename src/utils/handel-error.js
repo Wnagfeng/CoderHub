@@ -5,6 +5,9 @@ const {
   NAME_IS_ALREADLY_EXISTS,
   NAME_IS_NOT_EXISTS,
   PASSWORD_IS_INCORRENT,
+  UNAUTHOURIZATHION,
+  OPERATION_IS_NOT_ALLOWED,
+  SOURCE_IS_EMPTY
 } = require('../config/error-constance');
 app.on('error', (error, ctx) => {
   let code = 0;
@@ -25,6 +28,18 @@ app.on('error', (error, ctx) => {
     case PASSWORD_IS_INCORRENT:
       code = -1005;
       message = '用户密码错误';
+      break;
+    case UNAUTHOURIZATHION:
+      code = -1006;
+      message = '无效的Token';
+      break;
+    case OPERATION_IS_NOT_ALLOWED:
+      code = -1007;
+      message = '你妈的没有权限动它干毛';
+      break;
+    case SOURCE_IS_EMPTY:
+      code = -1008;
+      message = '当前这个动态不存在';
       break;
   }
   ctx.body = {

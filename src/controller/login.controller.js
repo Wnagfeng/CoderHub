@@ -20,5 +20,8 @@ class LoginController {
       },
     };
   }
+  next(ctx, next) {
+    ctx.body="可以获取获取数据了"
+  }
 }
 module.exports = new LoginController();
