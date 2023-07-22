@@ -5,6 +5,7 @@ const PASSWORD_IS_INCORRENT = 'password_is_incorrent';
 const UNAUTHOURIZATHION = 'unauthourizathion';
 const OPERATION_IS_NOT_ALLOWED = 'operation_is_not_allowed';
 const SOURCE_IS_EMPTY = 'source_is_empty';
+const THECURRENTLABELALREADYEXISTS = 'Thecurrentlabelalreadyexists';
 module.exports = {
   NAME_IS_ALREADLY_EXISTS,
   NAME_OR_PASSWORD_IS_REQUIRE,
@@ -12,5 +13,6 @@ module.exports = {
   PASSWORD_IS_INCORRENT,
   UNAUTHOURIZATHION,
   OPERATION_IS_NOT_ALLOWED,
-  SOURCE_IS_EMPTY
+  SOURCE_IS_EMPTY,
+  THECURRENTLABELALREADYEXISTS
 };

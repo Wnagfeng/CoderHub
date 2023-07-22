@@ -1,0 +1,13 @@
+[
+  { "label": "前端", "labelid": 4 },
+  { "label": "后端", "labelid": 7 },
+  { "label": "大数据", "labelid": 8 },
+  { "label": "爱情", "labelid": 11 },
+  { "label": "人文", "labelid": 12 },
+  { "label": "历史", "labelid": 13 },
+  { "label": "天文", "labelid": 14 },
+  { "label": "地理", "labelid": 15 },
+  { "label": "小黑子", "labelid": 16 },
+  { "label": "chatGpt", "labelid": 17 },
+  { "label": "Ikun", "labelid": 18 }
+]

@@ -4,16 +4,16 @@ const {
   LoginAUTHourizathionVerify,
 } = require('../middleware/login.middleeare');
 const getresourceState = require('../middleware/getresourceState');
+const verifyPermission = require('../middleware/permission.middleware');
 const comment = require('../controller/comment.controller');
 
-commentRouter.post(
-  '/',
+commentRouter.post('/', LoginAUTHourizathionVerify, comment.create);
+commentRouter.post('/reply', LoginAUTHourizathionVerify, comment.reply);
+commentRouter.delete(
+  '/:commentid',
   LoginAUTHourizathionVerify,
-  comment.create,
+  getresourceState,
+  verifyPermission,
+  comment.delete,
 );
-commentRouter.post(
-    '/reply',
-    LoginAUTHourizathionVerify,
-    comment.reply,
-  );
 module.exports = commentRouter;

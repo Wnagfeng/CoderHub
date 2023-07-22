@@ -14,6 +14,8 @@ const verifyMonmentPermission = async (ctx, next) => {
 const verifyPermission = async (ctx, next) => {
   // 获取到需要查询的表的名字
   const keyName = Object.keys(ctx.params)[0];
+  console.log(keyName);
+  
  
   
   // 拿到需要修改的rowid

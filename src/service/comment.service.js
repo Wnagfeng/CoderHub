@@ -11,8 +11,6 @@ class commentservice {
     return result;
   }
   async aply(content, userID, monmentid, commentid) {
-    console.log(content, userID, monmentid, commentid);
-
     const statement =
       'INSERT INTO comment (content,moment_id,user_id,comment_id) VALUES(?,?,?,?);';
     const [result] = await database.execute(statement, [
@@ -21,8 +19,11 @@ class commentservice {
       String(userID),
       String(commentid),
     ]);
-    console.log(result);
-
+    return result;
+  }
+  async delete(comment_id) {
+    const statement = 'DELETE FROM comment WHERE id= ?;';
+    const [result] = await database.execute(statement, [String(comment_id)]);
     return result;
   }
 }

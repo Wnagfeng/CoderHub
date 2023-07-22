@@ -7,7 +7,8 @@ const {
   PASSWORD_IS_INCORRENT,
   UNAUTHOURIZATHION,
   OPERATION_IS_NOT_ALLOWED,
-  SOURCE_IS_EMPTY
+  SOURCE_IS_EMPTY,
+  THECURRENTLABELALREADYEXISTS,
 } = require('../config/error-constance');
 app.on('error', (error, ctx) => {
   let code = 0;
@@ -41,6 +42,9 @@ app.on('error', (error, ctx) => {
       code = -1008;
       message = '当前这个动态不存在';
       break;
+    case THECURRENTLABELALREADYEXISTS:
+      code = -1009;
+      message = '当前这个标签已经创建了';
   }
   ctx.body = {
     code,
