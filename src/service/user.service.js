@@ -15,5 +15,18 @@ class UserService {
     const [valeuse] = await database.execute(statement, [username]);
     return valeuse;
   }
+  async showUseravatraImg(user_id) {
+    const statement = 'SELECT * FROM avatar WHERE avatar.user_id=?;';
+    const [result] = await database.execute(statement, [String(user_id)]);
+    return result.pop();
+  }
+
+  async addUserAvatar(url, id) {
+    console.log(url, id);
+
+    const statement = 'UPDATE user SET avatar_url= ? WHERE user.id=?;';
+    const [result] = await database.execute(statement, [url, String(id)]);
+    return result;
+  }
 }
 module.exports = new UserService();

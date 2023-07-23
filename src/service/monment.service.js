@@ -24,7 +24,7 @@ class MonmentService {
     const statement = `
     SELECT 
     m.id id,m.content content ,m.createAt createTime ,m.updateAt updataTime,
-    JSON_OBJECT("id",u.id,"name",u.name,"createTime",u.createAt,"updataTime",u.updateAt) AS 'user',
+    JSON_OBJECT("id",u.id,"name",u.name,"createTime",u.createAt,"avatar_url",u.avatar_url,"updataTime",u.updateAt) AS 'user',
     -- 子查询开始
     (
     SELECT 
